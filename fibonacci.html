@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        .red {
+            color:rgba(255, 0, 0, 0.5)
+        }
+        textarea{
+            resize: none;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>斐波那契数列计算</h1>
+    <input type="text" id="in" value="请输入数列项目数" class="red">
+    <button id="bt">计算</button>
+    <p>结果</p>
+    <!-- <input type="text" id="out"> -->
+    <textarea name="" id="ta" cols="30" rows="10" minlength="10" maxlength="30"></textarea>
+
+
+
+    <script>
+        var ins = document.getElementById('in');
+        // var outs = document.getElementById('ta');
+        var tas = document.getElementById('ta');
+        // var max = ins.innerText;
+        document.getElementById('bt');
+        ins.onfocus = function () {
+            if (ins.value == "请输入数列项目数"){
+                ins.value = '';
+            }
+        }
+        ins.onblur = function(){
+            ins.className = 'black';
+        }
+        bt.onclick = function () {
+            tas.value = '';
+            max = ins.value;
+            console.log('max:' + max);
+            // document.write('<textarea>')
+            // out.value = fb(max);
+            calc(max);
+            // document.write('结果：' + fb(max))
+        }
+        function fb(num) {
+            return num < 3 ? 1 : fb(num - 1) + fb(num - 2);
+        }
+        function calc(max) {
+            for (var i = 1; i <= max; i++) {
+                fb(i)
+                ta.value += fb(i)
+                ta.value += '\n'
+                // console.log(fb(i));
+            }
+        }
+    </script>
+</body>
+
+</html>
